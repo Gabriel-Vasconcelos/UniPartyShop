@@ -1,0 +1,125 @@
+.login-register-body {
+    overflow-y: hidden;
+    background-color: #FAFAFA;
+}
+.login-register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-register .image-section {
+
+}
+.login-register .image-section img {
+    height: 100vh;
+    width: 50vw;
+    object-fit: cover;
+}
+.forms-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-height: 90vh;
+    width: 100%;
+    padding: 0 100px;
+}
+.forms-section .header-login-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+    margin-bottom: 54px;
+}
+.forms-section .header-login-register .logo {
+    font-size: 3em;
+    font-weight: bold;
+    color: #222;
+}
+.forms-section .header-login-register .buttons {
+    display: flex;
+}
+.forms-section .header-login-register .buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 4px solid #999;
+    padding: 0 44px 4px 44px;
+    color: #555;
+
+}
+.forms-section .header-login-register .buttons button.clicked {
+    border-bottom: 4px solid #222;
+    padding-bottom: 8px;
+    color: #222;
+
+}
+.login-register-forms {
+    width: 76%;
+    margin: 0 auto;
+
+}
+.login-register-forms form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.login-register-forms form.register {
+    display: none;
+}
+.login-register-forms form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.login-register-forms form label input {
+    background-color: #d5d5d5;
+    border: none;
+    padding: 16px 12px;
+    width: 100%;
+    font-size: 1em
+}
+.login-register-forms form .forms-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+.login-register-forms form .forms-button .button {
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 50%;
+    text-align: center;
+    padding: 16px 12px;
+    cursor: pointer;
+    line-height: normal;
+
+}
+.login-register-forms form .forms-button button.button {
+    background-color: #28a745;
+    color: #FEFEFE;
+    height: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.login-register-forms form .forms-button button.button:hover {
+    background-color: #218838;
+}
+.login-register-forms form .forms-button a.button {
+    background-color: #D5D5D5;
+    color: #222;
+    height: 100%;
+}
+.login-register-forms form .forms-button a.button:hover {
+    background-color: #C9C9C9;
+}

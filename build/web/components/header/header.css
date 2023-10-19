@@ -1,0 +1,75 @@
+
+header.header-body {
+    color: #222;
+    background-color: #fafafa;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .header-menu ul {
+    display: flex;
+    gap: 20px;
+}
+header .header-menu ul li a {
+    font-size: 16px;
+    color: #222;
+}
+header .header-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+header .header-icons button {
+    border: none;
+    border-radius: 100%;
+    width: 56px;
+    height: 56px;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+header .header-icons .profile {
+    position: relative;
+}
+header .header-icons .chevron-down,
+header .header-icons .chevron-up {
+    width: 16px;
+}
+header .header-icons .chevron-up {
+    display: none;
+}
+header .profile-options {
+    display: none;
+    position: absolute;
+    background-color: #D9D9D9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    padding: 8px 0;
+}
+header .profile-options ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+}
+header .header-icons .profile:hover .profile-options,
+header .header-icons .profile:focus .profile-options,
+header .header-icons .profile:hover .chevron-up,
+header .header-icons .profile:focus .chevron-up {
+    display: block;
+}
+header .header-icons .profile:hover .chevron-down,
+header .header-icons .profile:focus .chevron-down {
+    display: none;
+}

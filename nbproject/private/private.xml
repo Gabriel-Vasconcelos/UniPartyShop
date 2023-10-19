@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/controller/access/LoginServlet.java</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.jsp</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.css</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.js</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/model/user/UserDAO.java</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/config/ConfigDB.java</file>
+            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/global.css</file>
+        </group>
+    </open-files>
+</project-private>
