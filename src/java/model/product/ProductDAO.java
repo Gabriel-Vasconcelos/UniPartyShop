@@ -29,6 +29,7 @@ public class ProductDAO {
             ps.close();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD insert do product - " + ex);
             return false;
         }
         return success;
@@ -52,8 +53,56 @@ public class ProductDAO {
             ps.close();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD select do product - " + ex);
             return false;
         }
         return success;
     }
+    
+    public boolean updateProduct(int id, String description, String price,String photo,String quantity){
+        boolean success = false;
+        
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("UPDATE product SET (id, description, price, photo, quantity, is_admin) VALUES (?, ?, ?, ?, ?,  false)");
+            ps.setInt(1, id);
+            ps.setString(2, description);
+            ps.setString(3, price);
+            ps.setString(4, photo);
+            ps.setString(5, quantity);
+            success = (ps.executeUpdate() == 1);
+            ps.close();
+            c.close();
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD update do product - " + ex);
+            return false;
+        }
+        
+        return success;
+    }
+    
+     public boolean removeProduct(int id){
+        boolean success = false;
+        
+        try{
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("DELETE * FROM product WHERE id = ?");
+            ps.setInt(1, id);
+            
+            success = (ps.executeUpdate() == 1);
+            
+            ps.close();
+            c.close();
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD remove do product - " + ex);
+            success = false;
+        }
+        
+        return success;
+    }
+    
 }

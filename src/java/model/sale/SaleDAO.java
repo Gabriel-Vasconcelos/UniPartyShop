@@ -47,4 +47,26 @@ public class SaleDAO {
         return success;
     }
     
+     public boolean updateSale(int id, String data_hour){
+        boolean success = false;
+        
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("UPDATE product SET (id, data_hour, is_admin) VALUES (?, ?,  false)");
+            ps.setInt(1, id);
+            ps.setString(2, data_hour);
+            success = (ps.executeUpdate() == 1);
+            ps.close();
+            c.close();
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD update do product - " + ex);
+            return false;
+        }
+        
+        return success;
+    }
+    
+    
 }

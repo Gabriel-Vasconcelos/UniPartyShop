@@ -47,4 +47,48 @@ public class CategoryDAO {
         }
         return success;
     }
+    
+    public boolean updateCategory(int id, String name){
+        boolean success = false;
+        
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("UPDATE category SET (id, name, is_admin) VALUES (?, ?,  false)");
+            ps.setInt(1, id);
+            ps.setString(2, name);
+            success = (ps.executeUpdate() == 1);
+            ps.close();
+            c.close();
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD update do category - " + ex);
+            return false;
+        }
+        
+        return success;
+    }
+    
+     public boolean removeCategory(int id){
+        boolean success = false;
+        
+        try{
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("DELETE * FROM category WHERE id = ?");
+            ps.setInt(1, id);
+            
+            success = (ps.executeUpdate() == 1);
+            
+            ps.close();
+            c.close();
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD remove do category - " + ex);
+            success = false;
+        }
+        
+        return success;
+    }
+    
 }
