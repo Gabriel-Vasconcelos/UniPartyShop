@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -20,5 +20,18 @@
         <servlet-name>LoginRegister</servlet-name>
         <url-pattern>/pages/login-register/</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>MyProfilePage</servlet-name>
+        <jsp-file>/pages/my-profile/my-profile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyProfilePage</servlet-name>
+        <url-pattern>/pages/my-profile/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.access.LogoutServlet</servlet-class>
+    </servlet>
+    
+    
 </web-app>

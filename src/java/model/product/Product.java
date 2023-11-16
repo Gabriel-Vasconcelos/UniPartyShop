@@ -1,22 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.product;
 
-/**
- *
- * @author wiljo
- */
 public class Product {
     private int id;
-    /**
-    private Category category; 
-    * */
     private String description;
-    private String price;
+    private String title;
+    private double price;
     private String photo;
-    private String quantity;
+    private int quantity;
+    private int category_id;
 
     public int getId() {
         return id;
@@ -25,15 +16,7 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
-/**
-    public Category getCategory() {
-        return category;
-    }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-**/
     public String getDescription() {
         return description;
     }
@@ -42,11 +25,19 @@ public class Product {
         this.description = description;
     }
 
-    public String getPrice() {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -58,20 +49,20 @@ public class Product {
         this.photo = photo;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
-    
-    
-    
-   
 
-  
-    
-           
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+   
 }

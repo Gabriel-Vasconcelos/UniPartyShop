@@ -1,0 +1,22 @@
+#my-profile {
+    padding-top: 32px;
+}
+
+#my-profile-content {
+    display: flex;
+    gap: 0 52px;
+}
+
+#dashboard-profile {
+    width: 100%;
+    max-width: 290px;
+}
+
+#manage-account {
+    width: 100%;
+    max-width: 950px;
+}
+
+.title {
+    text-align: center;
+}
