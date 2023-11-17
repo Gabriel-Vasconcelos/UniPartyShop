@@ -20,3 +20,11 @@
 .title {
     text-align: center;
 }
+
+.updateButton {
+    display: none;
+}
+
+.cancelButton {
+    display: none;
+}
