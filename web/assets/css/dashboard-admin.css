@@ -1,0 +1,19 @@
+#dashboard-admin {
+    display: flex;
+    gap: 0 36px;
+    
+}
+
+#dashboard-header {
+    width: 100%;
+    max-width: 355px;
+    padding-top: 66px;
+}
+
+#dashboard-body {
+    padding-top: 24px;
+}
+
+#dashboard-categories {
+    display: none;
+}

@@ -37,7 +37,8 @@ public class CategoryDAO {
     }
     
     /**
-     * Método utilizado para listar todas as categorias
+     * Método utilizado para listar to
+     * das as categorias
      * 
      * @param name
      * 

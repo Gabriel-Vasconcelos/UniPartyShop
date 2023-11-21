@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>NewProductServlet</servlet-name>
+        <servlet-class>controller.product.NewProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewProductServlet</servlet-name>
+        <url-pattern>/admin/new-product</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -29,9 +37,31 @@
         <url-pattern>/pages/my-profile/</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>DashboardAdmin</servlet-name>
+        <jsp-file>/WEB-INF/dashboard-admin/dashboard-admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardAdmin</servlet-name>
+        <url-pattern>/admin/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewCategory</servlet-name>
+        <jsp-file>/WEB-INF/dashboard-admin/category/category.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewCategory</servlet-name>
+        <url-pattern>/admin/category/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewProduct</servlet-name>
+        <jsp-file>/WEB-INF/dashboard-admin/product/product.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewProduct</servlet-name>
+        <url-pattern>/admin/product/</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controller.access.LogoutServlet</servlet-class>
     </servlet>
-    
-    
 </web-app>

@@ -5,7 +5,7 @@
 </head>
 <header class="header-body container">
     <div class="header-logo">
-        <a href="">UniPartyShop</a>
+        <a href="<%= request.getContextPath()%>/">UniPartyShop</a>
     </div>
     <nav class="header-menu">
         <ul>
@@ -33,6 +33,15 @@
                     <ul>
                         <%
                             User user = (User) session.getAttribute("user");
+                            if (user != null && user instanceof User && user.isAdmin()) {
+                        %>
+                        <li>
+                            <a href="<%= request.getContextPath()%>/admin" title="Meu Perfil">Painel Admin</a>
+                        </li>
+                        <%
+                            }
+                        %>
+                        <%
                             if (user != null && user instanceof User) {
                         %>
                         <li>
