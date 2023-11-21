@@ -12,8 +12,8 @@ function enableEdit(fieldId) {
             editButton.style.display = 'none';
             updateButton.style.display = 'inline-block';
             cancelButton.style.display = 'inline-block';
-            
-            if(field.name == 'password'){
+
+            if (field.name == 'password') {
                 field.type = 'text';
             }
         } else {
@@ -39,8 +39,8 @@ function cancelEdit(fieldId) {
             editButton.style.display = 'inline-block';
             updateButton.style.display = 'none';
             cancelButton.style.display = 'none';
-            
-            if(field.name == 'password'){
+
+            if (field.name == 'password') {
                 field.type = 'password';
             }
         } else {
@@ -48,5 +48,19 @@ function cancelEdit(fieldId) {
         }
     } else {
         console.error('Não há mais elementos irmãos subsequentes.');
+    }
+}
+
+function deleteProfile(contextPath) {
+    if (confirm('Tem certeza de que deseja excluir seu perfil?')) {
+        fetch(contextPath + '/deleteAccount', {
+            method: 'POST'
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = contextPath + "/";
+            } else {
+                alert('Falha ao excluir o perfil.');
+            }
+        });
     }
 }

@@ -124,9 +124,8 @@
 
                     <div class="manage-account-item"> 
                         <p>Você tem certeza que deseja excluir sua conta? Essa ação não poderá ser desfeita</p>
-                        <form action="<%= request.getContextPath()%>/deleteAccount" method="post">
-                            <button type="submit">Deletar</button>
-                        </form>
+                        <button type="button" onclick="deleteProfile('<%= request.getContextPath()%>')">Deletar</button>
+
                     </div>
                 </section>
             </main>
