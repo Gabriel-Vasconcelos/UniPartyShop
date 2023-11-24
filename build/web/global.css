@@ -62,5 +62,25 @@ table {
 
 
 .container {
-    padding: 0 52px;
+    padding-left: 52px;
+    padding-right: 52px;
 }
+
+.button {
+    background: #5F5B5B;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    color: #D9D9D9;
+    font-size: 28px;
+    border: none;
+    padding: 8px
+}
+
+.title-section {
+    text-align: center;
+    font-size: 64px;
+    color: #5F5B5B
+}
+
