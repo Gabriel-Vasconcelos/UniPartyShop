@@ -1,3 +1,7 @@
+body {
+    background-color: #D9D9D9; 
+}
+
 #dashboard-admin {
     display: flex;
     gap: 0 36px;
@@ -7,7 +11,9 @@
 #dashboard-header {
     width: 100%;
     max-width: 355px;
-    padding-top: 66px;
+    padding-top: 0;
+     margin-left: 0;
+     
 }
 
 #dashboard-body {
@@ -16,4 +22,227 @@
 
 #dashboard-categories {
     display: none;
+}
+
+#dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    background-color: #5F5B5B;
+    border-radius: 5px; 
+    margin-left: 0;
+}
+
+#dashboard-buttons h1 {
+    margin-bottom: 20px; 
+    color: #FFF; 
+    font-family: 'Actor', sans-serif;
+    font-size: 18px; 
+    font-weight: bold; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
+
+#dashboard-buttons button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #BBB;
+    font-family: 'Actor', sans-serif;
+    font-size: 18px;
+    padding: 8px;
+    text-decoration: none; 
+}
+
+#dashboard-buttons button:hover {
+    color: #FFF;
+}
+
+#dashboard-buttons .active {
+    color: #000000;
+    
+}
+
+#dashboard-products div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dashboard-products h2 {
+    font-family: 'Actor', sans-serif;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#dashboard-products .btn-new-product {
+    display: inline-block;
+    background-color: #5F5B5B; 
+    color: #FFF; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 0; 
+    margin-bottom: 10px; 
+    font-family: 'Actor', sans-serif;
+    font-size: 18px;
+}
+
+#dashboard-products .btn-new-product:hover {
+    background-color: #363333; 
+}
+
+#dashboard-products table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+}
+
+#dashboard-products th, #dashboard-products td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#dashboard-products th {
+    background-color: #f2f2f2;
+}
+
+#dashboard-products td {
+    background-color: #fff;
+}
+
+#dashboard-products th, #dashboard-products td {
+    font-family: 'Actor', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+}
+
+#dashboard-products .edit-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #363333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.3s;
+}
+
+#dashboard-products .edit-button:hover {
+    background-color: #000;
+}
+
+#dashboard-products .delete-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#dashboard-products .delete-button:hover {
+    background-color: #c0392b;
+}
+
+
+
+#dashboard-categories {
+    display: none;
+}
+
+#dashboard-categories div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dashboard-categories h2 {
+    font-family: 'Actor', sans-serif;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#dashboard-categories .btn-new-category {
+    display: inline-block;
+    background-color: #5F5B5B;
+    color: #FFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: 'Actor', sans-serif;
+    font-size: 18px;
+}
+
+#dashboard-categories .btn-new-category:hover {
+    background-color: #363333;
+}
+
+#dashboard-categories table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#dashboard-categories th, #dashboard-categories td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#dashboard-categories th {
+    background-color: #f2f2f2;
+}
+
+#dashboard-categories td {
+    background-color: #fff;
+}
+
+#dashboard-categories th, #dashboard-categories td {
+    font-family: 'Actor', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+}
+
+#dashboard-categories .edit-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #363333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.3s;
+}
+
+#dashboard-categories .edit-button:hover {
+    background-color: #000;
+}
+
+#dashboard-categories .delete-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#dashboard-categories .delete-button:hover {
+    background-color: #c0392b;
 }

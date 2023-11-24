@@ -4,6 +4,8 @@
     <head>
         <link rel="stylesheet"  href="<%= request.getContextPath()%>/global.css"/>
         <link rel="stylesheet"  href="<%= request.getContextPath()%>/assets/css/category.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Actor&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Nova Categoria</title>
     </head>
@@ -37,10 +39,10 @@
                                     && !((String) request.getAttribute("categoryName")).isEmpty())
                                     ? "Atualizar" : "Cadastrar"%>   
                         </button>                            
-                        <a href="<%= request.getContextPath()%>/admin" class="button">voltar</a>
+                        <a href="<%= request.getContextPath()%>/admin" class="button">Voltar</a>
                     </div>
                 </form>
-                </div>
+                <!--</div>-->
             </section>
         </main>
     </body>

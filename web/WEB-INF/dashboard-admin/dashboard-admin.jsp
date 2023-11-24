@@ -8,31 +8,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/assets/css/dashboard-admin.css"/>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Actor&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
         <title>Painel do Admin</title>
     </head>
     <body>
         <jsp:include page="/components/header/header.jsp"/>
         <main class="" id="dashboard-admin">
             <section id="dashboard-header" class="container">
-                <h1>Painel Admin</h1>
-                <ul>
-                    <li>
-                        <button id="btnProducts">
-                            Produtos
-                        </button>
-                    </li>
-                    <li>
-                        <button id="btnCategories">
-                            Categorias
-                        </button>
-                    </li>
-                </ul>
+                
+                <div id="dashboard-buttons">
+                    <h1>Painel Admin</h1>
+        <button id="btnProducts"  onclick="showProducts()">Produtos</button>
+        <button id="btnCategories" onclick="showCategories()">Categorias</button>
+    </div>
             </section>
             <section id="dashboard-body" class="container">
                 <div id="dashboard-products">
                     <div>
                         <h2>Painel Admin > Produtos</h2>
-                        <a href="<%= request.getContextPath()%>/admin/new-product">Novo Produto</a>
+                        <a href="<%= request.getContextPath()%>/admin/new-product" class="btn-new-product">Novo Produto</a>
                     </div>
                     <div>
                         <table>
@@ -70,8 +65,8 @@
                                     <%= productCategory.getName()%>
                                 </td>
                                 <td>
-                                    <a href="<%= request.getContextPath()%>/admin/new-product?id=<%= product.getId()%>">Editar</a>
-                                    <button onclick="deleteProduct('<%= request.getContextPath()%>', <%= product.getId()%>)">Deletar</button>
+                                    <a href="<%= request.getContextPath()%>/admin/new-product?id=<%= product.getId()%>" class="edit-button">Editar</a>
+                                    <button onclick="deleteProduct('<%= request.getContextPath()%>', <%= product.getId()%>)" class="delete-button">Deletar</button>
                                 </td>
                             </tr>
                             <%
@@ -86,7 +81,7 @@
                 <div id="dashboard-categories">
                     <div>
                         <h2>Painel Admin > Categorias</h2>
-                        <a href="<%= request.getContextPath()%>/admin/new-category">Nova Categoria</a>
+                        <a href="<%= request.getContextPath()%>/admin/new-category" class="btn-new-category">Nova Categoria</a>
                     </div>
                     <div>
                         <table>
@@ -110,8 +105,8 @@
                                 <td><%= category.getId()%></td>
                                 <td><%= category.getName()%></td>
                                 <td>
-                                    <a href="<%= request.getContextPath()%>/admin/new-category?id=<%= category.getId()%>">Editar</a>
-                                    <button onclick="deleteCategory('<%= request.getContextPath()%>', <%= category.getId()%>)">Deletar</button>
+                                    <a href="<%= request.getContextPath()%>/admin/new-category?id=<%= category.getId()%>" class="edit-button">Editar</a>
+                                    <button onclick="deleteCategory('<%= request.getContextPath()%>', <%= category.getId()%>)" class="delete-button">Deletar</button>
                                 </td>
                             </tr>
                             <%

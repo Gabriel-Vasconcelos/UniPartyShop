@@ -4,6 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="my-profile.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Actor&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
         <title>Meu Perfil</title>
     </head>
     <body>
@@ -33,8 +35,9 @@
                         <div class="manage-account-item">
                             <label>
                                 <h4>Nome</h4>
+                                <div class="input-container">
                                 <input type="text" name="name" id="name" name="name" value="${user.name}" readonly="true" />
-                            </label>
+                            
                             <div>
                                 <button type="button" class="editButton" onclick="enableEdit('name')">
                                     Alterar
@@ -46,13 +49,16 @@
                                     Cancelar
                                 </button>
                             </div>
+                            </div>
+                            </label>
                         </div>
 
                         <div class="manage-account-item">
                             <label>
                                 <h4>Login</h4>
+                                <div class="input-container">
                                 <input type="text"  id="username" name="username" value="${user.username}" readonly />
-                            </label>
+                            
                             <div>
                                 <button type="button" class="editButton" onclick="enableEdit('username')">
                                     Alterar
@@ -63,14 +69,17 @@
                                 <button type="button" class="cancelButton" onclick="cancelEdit('username')">
                                     Cancelar
                                 </button>
-                            </div>
-                        </div>
+                            </div>   
+                             </div>
+                           </label>
+                       </div>
 
                         <div class="manage-account-item">
                             <label>
                                 <h4>Email</h4>
+                                <div class="input-container">
                                 <input type="email" id="email" name="email" value="${user.email}" readonly />
-                            </label>
+                           
                             <div>
                                 <button type="button" class="editButton" onclick="enableEdit('email')">
                                     Alterar
@@ -82,13 +91,16 @@
                                     Cancelar
                                 </button>
                             </div>
+                            </div>
+                            </label>
                         </div>
 
                         <div class="manage-account-item">
                             <label>
                                 <h4>Endereço</h4>
+                                <div class="input-container">
                                 <input type="text" id="address" name="address" value="${user.address}" readonly />
-                            </label>
+                            
                             <div>
                                 <button type="button" class="editButton" onclick="enableEdit('address')">
                                     Alterar
@@ -100,14 +112,16 @@
                                     Cancelar
                                 </button>
                             </div>
-
+                        </div> 
+                        </label>        
                         </div>
 
                         <div class="manage-account-item">
                             <label>
                                 <h4>Senha</h4>
+                                <div class="input-container">
                                 <input type="password" id="password" name="password" value="${user.password}" readonly />
-                            </label>
+                            
                             <div>
                                 <button type="button" class="editButton" onclick="enableEdit('password')">
                                     Alterar
@@ -119,14 +133,17 @@
                                     Cancelar
                                 </button>
                             </div>
+                            </div>
+                            </label>
                         </div>
                     </form>
 
-                    <div class="manage-account-item"> 
-                        <p>Você tem certeza que deseja excluir sua conta? Essa ação não poderá ser desfeita</p>
-                        <button type="button" onclick="deleteProfile('<%= request.getContextPath()%>')">Deletar</button>
-
-                    </div>
+                    <div class="delete-content">
+    <p>Você tem certeza que deseja excluir sua conta? Essa ação não poderá ser desfeita</p>
+    <div class="deleteButton-container">
+        <button type="button" class="deleteButton" onclick="deleteProfile('<%= request.getContextPath()%>')">Deletar</button>
+    </div>
+</div>
                 </section>
             </main>
         </div>

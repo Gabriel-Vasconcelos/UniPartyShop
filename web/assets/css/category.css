@@ -1,1 +1,92 @@
+.new-category-body {
+    background-color: #f5f5f5; 
+    font-family: 'Actor', sans-serif;
+}
 
+.new-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forms-section {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-new-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.clicked {
+    background-color: #5F5B5B;
+    color: #FFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.category-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-form label {
+    margin-bottom: 10px;
+}
+
+.category-form label[for="name"] {
+    width: 100%;
+}
+
+.category-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.forms-button {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    flex: 1;
+    padding: 10px;
+    background-color: #5F5B5B;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #363333;
+}

@@ -7,16 +7,18 @@
     <head>
         <link rel="stylesheet"  href="<%= request.getContextPath()%>/global.css"/>
         <link rel="stylesheet"  href="<%= request.getContextPath()%>/assets/css/product.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Actor&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Novo Produto</title>
     </head>
     <body class="new-product-body">
         <main class="new-product">
-            <section class="image-section">
+           <!-- <section class="image-section">-->
                 <!-- <img src="../../assets/images/image-lexica.jpg" alt="alt" width="auto" height="auto"/>-->
-            </section>
+            <!--</section>-->
             <section class="forms-section container">
-                <header class="header-new-category">
+                <header class="header-new-product">
                     <a href="<%= request.getContextPath()%>/admin" title="Painel Admin" class="logo">Painel Admin</a>
                     <div class="buttons">
                         <button class="clicked">Produto</button>
@@ -78,10 +80,10 @@
                                     && !((String) request.getAttribute("productTitle")).isEmpty())
                                     ? "Atualizar" : "Cadastrar"%>   
                         </button>                            
-                        <a href="<%= request.getContextPath()%>/admin" class="button">voltar</a>
+                        <a href="<%= request.getContextPath()%>/admin" class="button">Voltar</a>
                     </div>
                 </form>
-                </div>
+                <!--</div>-->
             </section>
         </main>
     </body>
