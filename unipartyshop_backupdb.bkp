@@ -26,7 +26,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.category (
     id integer NOT NULL,
-    description character varying(255) NOT NULL
+    name character varying(255) NOT NULL
 );
 
 
@@ -197,7 +197,9 @@ ALTER TABLE ONLY public.sale ALTER COLUMN id SET DEFAULT nextval('public.sale_id
 -- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.category (id, description) FROM stdin;
+COPY public.category (id, name) FROM stdin;
+2	222categoria teste 2
+1	categoria teste
 \.
 
 
@@ -206,9 +208,8 @@ COPY public.category (id, description) FROM stdin;
 --
 
 COPY public.client (id, name, address, email, username, password, is_admin) FROM stdin;
-1	Gabriel Vasco	Avenida da Rua do Bairro. 123	gabriel@email.com	gab	123	f
-2	Name test	rua test 123	test@email.com	test123	123	f
 4	francisco	rua francisco	francisco@email.com	ff2	123	f
+1	Gabriel Vasco	Avenida da Rua do Bairro. 123	gabriel@email.com	gab	123	t
 \.
 
 
@@ -217,6 +218,9 @@ COPY public.client (id, name, address, email, username, password, is_admin) FROM
 --
 
 COPY public.product (id, description, title, price, photo, quantity, category_id) FROM stdin;
+4	Descrição do Produto 2	Título do Produto 2	29.99	caminho/para/foto2.jpg	15	1
+5	Descrição do Produto 3	Título do Produto 3	39.99	caminho/para/foto3.jpg	20	1
+7	produto novo descriÃÂ§ÃÂ£o	Produto novo2	123.00		120	2
 \.
 
 
@@ -240,21 +244,21 @@ COPY public.sale_product (sale_id, product_id, quantity) FROM stdin;
 -- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.category_id_seq', 1, false);
+SELECT pg_catalog.setval('public.category_id_seq', 9, true);
 
 
 --
 -- Name: client_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.client_id_seq', 4, true);
+SELECT pg_catalog.setval('public.client_id_seq', 17, true);
 
 
 --
 -- Name: product_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.product_id_seq', 1, false);
+SELECT pg_catalog.setval('public.product_id_seq', 7, true);
 
 
 --

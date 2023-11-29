@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/controller/access/LoginServlet.java</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.jsp</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.css</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/pages/login-register/login-register.js</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/model/user/UserDAO.java</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/src/java/config/ConfigDB.java</file>
-            <file>file:/home/gabrielvasconcelos/NetBeansProjects/UniPartyShop/web/global.css</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/assets/css/dashboard-admin.css</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/pages/my-profile/my-profile.jsp</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/assets/css/category.css</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/WEB-INF/dashboard-admin/dashboard-admin.jsp</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/assets/css/product.css</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/pages/my-profile/my-profile.css</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/WEB-INF/dashboard-admin/category/category.jsp</file>
+            <file>file:/C:/Users/wiljo/OneDrive/Documentos/NetBeansProjects/UniPartyShop/web/WEB-INF/dashboard-admin/product/product.jsp</file>
         </group>
     </open-files>
 </project-private>

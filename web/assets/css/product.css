@@ -1,0 +1,91 @@
+.new-product-body {
+    background-color: #f5f5f5; 
+    font-family: 'Actor', sans-serif;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+}
+
+.new-product {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.forms-section {
+    flex: 2;
+    padding: 20px;
+}
+
+.header-new-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.clicked {
+    background-color: #5F5B5B;
+    color: #FFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-form label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-form label[for="title"] {
+    width: 100%; 
+}
+
+.product-form input, .product-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.forms-button {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #5F5B5B;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #363333;
+}
