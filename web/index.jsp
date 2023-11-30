@@ -35,7 +35,7 @@
                             <p class="product-card-description"><%= product.getDescription()%></p>
                         </div>
                         <div class="product-card-footer">
-                            <button class="button product-card-button">Comprar</button>
+                            <a class="button product-card-button" href="./add-product-shopping-cart?productId=<%= product.getId()%>">Comprar</a>
                         </div>
                     </div>
 

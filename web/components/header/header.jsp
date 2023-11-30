@@ -67,9 +67,9 @@
             </button>
         </li>
         <li>
-            <button>
+            <a href="<%= request.getContextPath()%>/pages/shopping-cart" title="Meu Carrinho" id="shopping-cart">
                 <i data-lucide="shopping-cart"></i>
-            </button>
+            </a>
         </li>
     </ul>
 </header>

@@ -12,6 +12,26 @@
         <servlet-name>NewProductServlet</servlet-name>
         <servlet-class>controller.product.NewProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>controller.access.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddProductShoppingCartServlet</servlet-name>
+        <servlet-class>controller.shoppingcart.AddProductShoppingCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveProductShoppingCartServlet</servlet-name>
+        <servlet-class>controller.shoppingcart.RemoveProductShoppingCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveAddProductQuantifyServlet</servlet-name>
+        <servlet-class>controller.shoppingcart.RemoveAddProductQuantifyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SaleInsertServlet</servlet-name>
+        <servlet-class>controller.sale.SaleInsertServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -19,6 +39,26 @@
     <servlet-mapping>
         <servlet-name>NewProductServlet</servlet-name>
         <url-pattern>/admin/new-product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProductShoppingCartServlet</servlet-name>
+        <url-pattern>/add-product-shopping-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveProductShoppingCartServlet</servlet-name>
+        <url-pattern>/remove-product-shopping-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveAddProductQuantifyServlet</servlet-name>
+        <url-pattern>/remove-add-product-quantify</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaleInsertServlet</servlet-name>
+        <url-pattern>/sale-insert</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -67,6 +107,14 @@
     <servlet-mapping>
         <servlet-name>NewProduct</servlet-name>
         <url-pattern>/admin/product/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ShoppingCart</servlet-name>
+        <jsp-file>/pages/shopping-cart/shopping-cart.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShoppingCart</servlet-name>
+        <url-pattern>/pages/shopping-cart/</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>

@@ -24,7 +24,7 @@ header .header-icons {
     position: relative;
 }
 
-header .header-icons button {
+header .header-icons button, header .header-icons a#shopping-cart {
     border: none;
     border-radius: 100%;
     width: 56px;

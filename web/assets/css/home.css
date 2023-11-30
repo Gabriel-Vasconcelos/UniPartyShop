@@ -53,8 +53,12 @@
     font-size: 14px;
 }
 
-button.product-card-button {
+a.product-card-button {
     font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a.product-section-button {
