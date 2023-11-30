@@ -202,3 +202,9 @@ border-bottom: 1px solid #000000;
     border: 1px solid #5F5B5B;
     border-radius: 20px; 
 }
+
+/*My Orders*/
+
+#my-orders {
+    display: none;
+}

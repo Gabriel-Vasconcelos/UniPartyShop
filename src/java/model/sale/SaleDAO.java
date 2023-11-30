@@ -4,7 +4,9 @@ import static config.ConfigDB.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import model.shoppingcart.ShoppingCartItem;
 
@@ -67,4 +69,35 @@ public class SaleDAO {
         return success;
     }
 
+    public List<Sale> getSalesByUserId(int userId) {
+        List<Sale> sales = new ArrayList<>();
+        SaleProductDAO saleProductDAO = new SaleProductDAO();
+
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM sale WHERE user_id = ?");
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Sale sale = new Sale();
+                sale.setId(rs.getInt("id"));
+                sale.setDateTime(rs.getTimestamp("date_time"));
+                sale.setUserId(rs.getInt("user_id"));
+
+                // Get products for the sale
+                List<SaleProduct> products = saleProductDAO.getProductsBySaleId(sale.getId());
+                sale.setProducts(products);
+
+                sales.add(sale);
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD getSalesByUserId - " + ex);
+        }
+
+        return sales;
+    }
 }

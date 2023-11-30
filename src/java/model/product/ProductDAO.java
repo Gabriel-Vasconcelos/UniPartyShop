@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
-    
+
     /**
      * Método utilizado para inserir um novo produto
      *
@@ -20,7 +20,7 @@ public class ProductDAO {
      * @param photo
      * @param quantity
      * @param category_id
-     * 
+     *
      * @return
      */
     public boolean insertProdut(String description, String title, double price, String photo, int quantity, int category_id) {
@@ -35,7 +35,7 @@ public class ProductDAO {
             ps.setString(4, photo);
             ps.setInt(5, quantity);
             ps.setInt(6, category_id);
-            
+
             success = (ps.executeUpdate() == 1);
             ps.close();
             c.close();
@@ -45,12 +45,12 @@ public class ProductDAO {
         }
         return success;
     }
-    
+
     /**
      * Método utilizado para listar um produto existente
      *
      * @param id
-     * 
+     *
      * @return
      */
     public Product selectProduct(int id) {
@@ -78,11 +78,39 @@ public class ProductDAO {
             System.out.println("METHOD product select - " + ex);
             return null;
         }
-        
+
         return product;
     }
-    
-    
+
+    /**
+     * Método utilizado para trazer o título do produto existente
+     *
+     * @param id
+     *
+     * @return
+     */
+    public String getTitleProduct(int id) {
+        String product = null;
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT title FROM product WHERE id = ?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                product = rs.getString("title");
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD product getTitleProduct - " + ex);
+            return null;
+        }
+
+        return product;
+    }
+
     /**
      * Método utilizado para listar todos os produtos em estoque
      *
@@ -115,10 +143,10 @@ public class ProductDAO {
         }
         return products;
     }
-    
+
     /**
      * Método utilizado para atualizar um novo produto
-     * 
+     *
      * @param id
      * @param description
      * @param title
@@ -126,12 +154,12 @@ public class ProductDAO {
      * @param photo
      * @param quantity
      * @param category_id
-     * 
+     *
      * @return
      */
-    public boolean updateProduct(int id, String description, String title, double price, String photo, int quantity, int category_id){
+    public boolean updateProduct(int id, String description, String title, double price, String photo, int quantity, int category_id) {
         boolean success = false;
-        
+
         try {
             Class.forName(JDBC_DRIVER);
             Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
@@ -150,37 +178,37 @@ public class ProductDAO {
             System.out.println("METHOD product update - " + ex);
             return false;
         }
-        
+
         return success;
     }
-    
+
     /**
      * Método utilizado para deletar um produto existente
      *
      * @param id
-     * 
+     *
      * @return
      */
-    public boolean removeProduct(int id){
+    public boolean removeProduct(int id) {
         boolean success = false;
-        
-        try{
+
+        try {
             Class.forName(JDBC_DRIVER);
             Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
             PreparedStatement ps = c.prepareStatement("DELETE FROM product WHERE id = ?");
             ps.setInt(1, id);
-            
+
             success = (ps.executeUpdate() == 1);
-            
+
             ps.close();
             c.close();
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("METHOD product remove - " + ex);
             success = false;
         }
-        
+
         return success;
     }
-    
+
 }

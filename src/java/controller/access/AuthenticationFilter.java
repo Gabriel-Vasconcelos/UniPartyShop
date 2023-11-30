@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.user.User;
 
-@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/pages/my-profile", "/admin/*"})
+@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/pages/my-profile/", "/admin/*"})
 public class AuthenticationFilter implements Filter {
 
     @Override

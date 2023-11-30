@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const manageAccountBtn = document.getElementById('manageAccountBtn');
+    const myOrdersBtn = document.getElementById('myOrdersBtn');
+
+    const manageAccountSection = document.getElementById('manage-account');
+    const myOrdersSection = document.getElementById('my-orders');
+
+    manageAccountBtn.addEventListener('click', function () {
+        manageAccountSection.style.display = 'block';
+        myOrdersSection.style.display = 'none';
+    });
+
+    myOrdersBtn.addEventListener('click', function () {
+        manageAccountSection.style.display = 'none';
+        myOrdersSection.style.display = 'block';
+    });
+});
+
+
 function enableEdit(fieldId) {
     let field = document.getElementById(fieldId);
     let container = field.closest('.manage-account-item');
@@ -64,3 +83,4 @@ function deleteProfile(contextPath) {
         });
     }
 }
+

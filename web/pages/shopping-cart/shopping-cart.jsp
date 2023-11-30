@@ -94,14 +94,13 @@
                 <p>R$<%= realFormat.format(total)%></p>
                 <%
                     User user = (User) session.getAttribute("user");
-                    if (user != null && user instanceof User && !user.isAdmin()) {
+                    if (user != null && user instanceof User && !user.isAdmin() && total > 0) {
                 %>
                 <a href="<%= request.getContextPath()%>/sale-insert" >
                     Comprar agora
                 </a>
                 <%
-                    }
-                    if (total == 0) {
+                } else if (user != null && user instanceof User && !user.isAdmin() && total == 0) {
                 %>
                 <p>Adicione algum produto no carrinho!</p>
 

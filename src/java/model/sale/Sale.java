@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.sale;
 
-/**
- *
- * @author wiljo
- */
+import java.sql.Timestamp;
+import java.util.List;
+
 public class Sale {
-    
+
     private int id;
-    private String data_hour;
+    private Timestamp dateTime;
+    private int userId;
+    private List<SaleProduct> products;
 
     public int getId() {
         return id;
@@ -21,13 +18,29 @@ public class Sale {
         this.id = id;
     }
 
-    public String getData_hour() {
-        return data_hour;
+    public Timestamp getDateTime() {
+        return dateTime;
     }
 
-    public void setData_hour(String data_hour) {
-        this.data_hour = data_hour;
+    public void setDateTime(Timestamp dateTime) {
+        this.dateTime = dateTime;
     }
-    
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public List<SaleProduct> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<SaleProduct> products) {
+        this.products = products;
+    }
+
     
 }
