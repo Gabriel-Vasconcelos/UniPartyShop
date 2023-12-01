@@ -145,6 +145,70 @@ public class ProductDAO {
     }
 
     /**
+     * Método utilizado para listar todos os produtos que estão faltando
+     *
+     * @return
+     */
+    public List<Product> listMissingProducts() {
+        List<Product> products = new ArrayList();
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT id, title, description, price, quantity, category_id FROM product WHERE quantity = 0 ORDER BY description ASC");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setTitle(rs.getString("title"));
+                product.setDescription(rs.getString("description"));
+                product.setPrice(rs.getDouble("price"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setCategory_id(rs.getInt("category_id"));
+                products.add(product);
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            return new ArrayList();
+        }
+        return products;
+    }
+
+    /**
+     * Método utilizado para listar todos os produtos estando em estoque ou não
+     *
+     * @return
+     */
+    public List<Product> listAllProducts() {
+        List<Product> products = new ArrayList();
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM product");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setDescription(rs.getString("description"));
+                product.setTitle(rs.getString("title"));
+                product.setPhoto(rs.getString("photo"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setCategory_id(rs.getInt("category_id"));
+                product.setPrice(rs.getDouble("price"));
+                products.add(product);
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            return new ArrayList();
+        }
+        return products;
+    }
+
+    /**
      * Método utilizado para atualizar um novo produto
      *
      * @param id

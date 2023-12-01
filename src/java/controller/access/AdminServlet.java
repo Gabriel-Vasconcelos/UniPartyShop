@@ -23,12 +23,12 @@ public class AdminServlet extends HttpServlet {
         ProductDAO productDAO = new ProductDAO();
         CategoryDAO categoryDAO = new CategoryDAO();
 
-        List<Product> products = productDAO.listProducts();
+        List<Product> products = productDAO.listAllProducts();
         List<Category> categories = categoryDAO.listCategory(null);
 
         request.setAttribute("products", products);
         request.setAttribute("categories", categories);
-        
+
         User user = (User) request.getSession().getAttribute("user");
 
         if (user != null && user.isAdmin()) {

@@ -36,7 +36,10 @@
                             if (user != null && user instanceof User && user.isAdmin()) {
                         %>
                         <li>
-                            <a href="<%= request.getContextPath()%>/admin" title="Meu Perfil">Painel Admin</a>
+                            <a href="<%= request.getContextPath()%>/admin" title="Painel Admin">Painel Admin</a>
+                        </li>
+                        <li>
+                            <a href="<%= request.getContextPath()%>/admin/missing-product-report" title="Relatório">Gerar Relatório</a>
                         </li>
                         <%
                             }

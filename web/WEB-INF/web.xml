@@ -36,6 +36,10 @@
         <servlet-name>DeleteSaleProductsServlet</servlet-name>
         <servlet-class>controller.sale.DeleteSaleProductsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MissingProductReportServlet</servlet-name>
+        <servlet-class>report.MissingProductReportServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>DeleteSaleProductsServlet</servlet-name>
         <url-pattern>/admin/delete-sale-products</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MissingProductReportServlet</servlet-name>
+        <url-pattern>/admin/missing-product-report</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
