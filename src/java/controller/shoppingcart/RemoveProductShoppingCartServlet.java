@@ -38,7 +38,6 @@ public class RemoveProductShoppingCartServlet extends HttpServlet {
             response.addCookie(cookie);
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/shopping-cart/");
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/pages/shopping-cart");
     }
 }

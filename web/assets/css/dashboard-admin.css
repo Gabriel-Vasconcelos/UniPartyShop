@@ -250,3 +250,58 @@ body {
 #dashboard-categories .delete-button:hover {
     background-color: #c0392b;
 }
+
+#dashboard-sales {
+    display: none;
+    
+}
+
+#dashboard-sales.active {
+    display: block;
+    
+}
+
+#dashboard-sales h2 {
+    text-align: left; 
+     font-family: 'Actor', sans-serif;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+#dashboard-sales table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#dashboard-sales th, #dashboard-sales td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Actor', sans-serif;
+}
+
+#dashboard-sales th {
+    background-color: #5F5B5B;
+    color: #FFF;
+}
+
+#dashboard-sales td {
+    background-color: #fff;
+}
+
+#dashboard-sales .delete-button {
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#dashboard-sales .delete-button:hover {
+    background-color: #c0392b;
+    
+}

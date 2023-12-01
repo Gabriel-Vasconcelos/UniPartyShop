@@ -35,7 +35,7 @@
                             <p class="product-card-description"><%= product.getDescription()%></p>
                         </div>
                         <div class="product-card-footer">
-                            <a class="button product-card-button" href="./add-product-shopping-cart?productId=<%= product.getId()%>">Comprar</a>
+                            <a class="button product-card-button" href="./add-product-shopping-cart?productId=<%= product.getId()%>">Adicionar ao Carrinho</a>
                         </div>
                     </div>
 

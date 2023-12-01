@@ -8,13 +8,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="shopping-cart.css"/>
+        <link rel="stylesheet" href="<%= request.getContextPath()%>/global.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Actor&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
         <title>Meu Carrinho</title>
     </head>
     <body>
         <jsp:include page="../../components/header/header.jsp"/>
         <main class="container">
+            <section class="cart-section">
+        <div class="items-title-container">
             <h1>Carrinho</h1>
-
+        </div>
             <%
                 Cookie cookie = null;
                 Cookie[] cookies = request.getCookies();
@@ -32,12 +38,12 @@
                     }
                 }
             %>
-
-            <section>
-                <div>
-                    <h2>Todos os itens (<%= (cookie == null || cookie.getValue().length() == 0) ? "0" : cookie.getValue().length() + 1%>)</h2>
+            
+            
+                <div class="items-title-container">
+                    <h2>Todos os itens</h2>
                 </div>
-                <div id="shopping-cart-items-container">
+                <div id="shopping-cart-items-container" class="cart-items-container">
                     <%
                         if (cookie != null && cookie.getValue().length() > 0) {
 
@@ -55,17 +61,17 @@
                             <h3><%= items.get(i).getProduct().getTitle()%></h3>
                             <div>
                                 <p>R$ <%= realFormat.format(items.get(i).getProduct().getPrice() * items.get(i).getQuantify())%></p>
-                                <div>
+                                <div class="quantity-buttons">
                                     <div>
                                         <!--
                                         <a href="<%= request.getContextPath()%>/remove-add-product-quantify?productId=<%= items.get(i).getProduct().getId()%>&action=remove">-</a>
                                         -->
-                                        <a href="">-</a>
+                                        <!--<a href="">-</a>-->
                                         <span><%= items.get(i).getQuantify()%></span>
                                         <!--
                                         <a href="<%= request.getContextPath()%>/remove-add-product-quantify?productId=<%= items.get(i).getProduct().getId()%>&action=add">+</a>
                                         -->
-                                        <a href="">+</a>
+                                        <!--<a href="">+</a>-->
                                     </div>
                                     <a href="<%= request.getContextPath()%>/remove-product-shopping-cart?productId=<%= items.get(i).getProduct().getId()%> ">
                                         <i data-lucide="trash-2"></i>
@@ -81,7 +87,7 @@
 
                     } else {
                     %>
-                    <div class="">
+                    <div class="empty-cart">
                         <h3>Sem produtos no carrinho de compras</h3>
                     </div>
                     <%
@@ -89,14 +95,14 @@
                     %>
                 </div>
             </section>
-            <section>
+            <section class="order-summary-container">
                 <h2>Resumo do Pedido</h2>
                 <p>R$<%= realFormat.format(total)%></p>
                 <%
                     User user = (User) session.getAttribute("user");
                     if (user != null && user instanceof User && !user.isAdmin() && total > 0) {
                 %>
-                <a href="<%= request.getContextPath()%>/sale-insert" >
+                <a class="buy-now-button" href="<%= request.getContextPath()%>/sale-insert">
                     Comprar agora
                 </a>
                 <%
