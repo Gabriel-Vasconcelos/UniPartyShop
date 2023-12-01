@@ -34,4 +34,51 @@ public class SaleProductDAO {
         }
         return products;
     }
+
+    /**
+     * Método utilizado para deletar os produtos de uma venda
+     *
+     * @param saleId
+     * @param productId
+     *
+     * @return
+     */
+    public boolean removeSaleProducts(int saleId, int productId) {
+        boolean success = false;
+
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+
+            // Deletar a linha da tabela sale_product
+            PreparedStatement ps = c.prepareStatement("DELETE FROM sale_product WHERE sale_id = ? and product_id = ?");
+            ps.setInt(1, saleId);
+            ps.setInt(2, productId);
+            success = (ps.executeUpdate() == 1);
+            ps.close();
+
+            // Verificar se não há mais linhas para o sale_id específico
+            ps = c.prepareStatement("SELECT COUNT(*) FROM sale_product WHERE sale_id = ?");
+            ps.setInt(1, saleId);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            int rowCount = rs.getInt(1);
+
+            rs.close();
+            ps.close();
+            c.close();
+
+            // Se não houver mais linhas, remover a venda correspondente na tabela sale
+            if (rowCount == 0) {
+                SaleDAO saleDAO = new SaleDAO();
+                saleDAO.removeSale(saleId);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD removeSaleProducts" + ex);
+            return false;
+        }
+
+        return success;
+    }
+
 }

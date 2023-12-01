@@ -4,13 +4,13 @@ import static config.ConfigDB.*;
 import java.sql.*;
 
 public class UserDAO {
-    
+
     /**
      * Método utilizado para recuperar um usuário pelo login
-     * 
+     *
      * @param username
-     * 
-     * @return 
+     *
+     * @return
      */
     public User selectClient(String username) {
         User user = null;
@@ -39,14 +39,42 @@ public class UserDAO {
         }
         return user;
     }
-    
+
+    /**
+     * Método utilizado para recuperar o nome do usuário pelo ID
+     *
+     * @param id
+     *
+     * @return
+     */
+    public String selectClientById(int id) {
+        String user = null;
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT name FROM client WHERE id = ?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                user = rs.getString("name");
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD selectClientById " + ex);
+            return null;
+        }
+        return user;
+    }
+
     /**
      * Método utilizado para verificar se o login e a senha do usuário são
      * válidos
      *
      * @param username
      * @param password
-     * 
+     *
      * @return
      */
     public boolean validateAccess(String username, String password) {
@@ -83,7 +111,7 @@ public class UserDAO {
      */
     public boolean insertClient(String name, String address, String email, String username, String password) {
         boolean success = false;
-        
+
         try {
             Class.forName(JDBC_DRIVER);
             Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
@@ -100,10 +128,10 @@ public class UserDAO {
             System.out.println("METHOD insert client " + ex);
             return false;
         }
-        
+
         return success;
     }
-    
+
     /**
      * Método utilizado para atualizar um usuário
      *
@@ -113,12 +141,12 @@ public class UserDAO {
      * @param email
      * @param username
      * @param password
-     * 
+     *
      * @return
      */
-    public boolean updateClient(int id, String name, String address, String email, String username, String password){
+    public boolean updateClient(int id, String name, String address, String email, String username, String password) {
         boolean success = false;
-        
+
         try {
             Class.forName(JDBC_DRIVER);
             Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
@@ -129,31 +157,30 @@ public class UserDAO {
             ps.setString(4, username);
             ps.setString(5, password);
             ps.setInt(6, id);
-            
+
             success = (ps.executeUpdate() == 1);
-            
+
             ps.close();
             c.close();
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("METHOD update client - " + ex);
             return false;
         }
-        
+
         return success;
     }
-    
-    
+
     /**
      * Método utilizado para deletar um usuário
      *
      * @param id
-     * 
+     *
      * @return
      */
-    public boolean removeClient(int id){
+    public boolean removeClient(int id) {
         boolean success = false;
-        
-        try{
+
+        try {
             Class.forName(JDBC_DRIVER);
             Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
             PreparedStatement ps = c.prepareStatement("DELETE FROM client WHERE id = ?");
@@ -165,7 +192,7 @@ public class UserDAO {
             System.out.println("METHOD remove client" + ex);
             return false;
         }
-        
+
         return success;
     }
 }

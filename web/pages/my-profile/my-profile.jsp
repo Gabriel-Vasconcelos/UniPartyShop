@@ -177,7 +177,7 @@
                         <% for (Sale sale : sales) { %>
                         <%
                             for (SaleProduct product : sale.getProducts()) {
-                            String productTitle = productDAO.getTitleProduct(product.getProductId());
+                                String productTitle = productDAO.getTitleProduct(product.getProductId());
                         %>
                         <tr>
                             <td><%= productTitle%></td>

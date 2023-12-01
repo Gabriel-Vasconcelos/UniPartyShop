@@ -24,6 +24,10 @@ body {
     display: none;
 }
 
+#dashboard-sales {
+    display: none;
+}
+
 #dashboard-buttons {
     display: flex;
     flex-direction: column;

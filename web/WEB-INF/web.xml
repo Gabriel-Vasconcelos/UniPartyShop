@@ -32,6 +32,10 @@
         <servlet-name>SaleInsertServlet</servlet-name>
         <servlet-class>controller.sale.SaleInsertServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteSaleProductsServlet</servlet-name>
+        <servlet-class>controller.sale.DeleteSaleProductsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>SaleInsertServlet</servlet-name>
         <url-pattern>/sale-insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSaleProductsServlet</servlet-name>
+        <url-pattern>/admin/delete-sale-products</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

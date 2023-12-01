@@ -100,4 +100,61 @@ public class SaleDAO {
 
         return sales;
     }
+
+    public List<Sale> getSales() {
+        List<Sale> sales = new ArrayList<>();
+        SaleProductDAO saleProductDAO = new SaleProductDAO();
+
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM sale");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Sale sale = new Sale();
+                sale.setId(rs.getInt("id"));
+                sale.setDateTime(rs.getTimestamp("date_time"));
+                sale.setUserId(rs.getInt("user_id"));
+
+                // Get products for the sale
+                List<SaleProduct> products = saleProductDAO.getProductsBySaleId(sale.getId());
+                sale.setProducts(products);
+
+                sales.add(sale);
+            }
+            rs.close();
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD getSales - " + ex);
+        }
+
+        return sales;
+    }
+
+    /**
+     * Método utilizado para deletar uma venda inteira
+     *
+     * @param saleId
+     *
+     * @return
+     */
+    public boolean removeSale(int saleId) {
+        boolean success = false;
+
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement ps = c.prepareStatement("DELETE FROM sale WHERE id = ?");
+            ps.setInt(1, saleId);
+            success = (ps.executeUpdate() == 1);
+            ps.close();
+            c.close();
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("METHOD removeSale" + ex);
+            return false;
+        }
+
+        return success;
+    }
 }
